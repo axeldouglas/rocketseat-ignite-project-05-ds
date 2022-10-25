@@ -6,8 +6,15 @@ export default {
   component: Heading,
   args: {
     children: 'Lorem ipsum dolor',
+    size: 'md',
   },
   argTypes: {
+    size: {
+      options: ['sm', 'md', 'lg', '2xl', '4xl', '5xl', '6xl'],
+      control: {
+        type: 'select',
+      },
+    },
     children: {
       table: {
         disable: true,
@@ -20,8 +27,16 @@ export const Default: StoryObj<HeadingProps> = {};
 
 export const CustomTag: StoryObj<HeadingProps> = {
   args: {
-    children: 'H1 Element',
+    children: 'Custom Heading Element',
     as: 'h1',
+  },
+  argTypes: {
+    as: {
+      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+      control: {
+        type: 'select',
+      },
+    },
   },
   parameters: {
     docs: {
